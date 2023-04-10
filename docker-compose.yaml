@@ -1,7 +1,7 @@
 version: '3.7'
 services:
-  backend:
-    container_name: backend
+  calc-app-backend:
+    container_name: calc-app-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -15,8 +15,8 @@ services:
       - posgresql
       - redis
 
-  frontend:
-    container_name: frontend
+  calc-app-frontend:
+    container_name: calc-app-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -26,8 +26,8 @@ services:
     ports:
       - '3000:3000'
 
-  postgres:
-    container_name: postgres
+  calc-app-postgres:
+    container_name: calc-app-postgres
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -38,8 +38,8 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: calcapp
 
-  redis:
-    container_name: redis
+  calc-app-redis:
+    container_name: calc-app-redis
     image: redis:alpine
     ports:
       - '6379:6379'
