@@ -1,0 +1,5 @@
+mongodb_data_container/
+.DS_Store
+.env
+postgres_data/
+redis_data/
