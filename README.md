@@ -1,4 +1,4 @@
-# FApiNext-todo-app
+# ExpReact-calc-app
 
 Simple Express TS - React Redux Saas calculator app
 
