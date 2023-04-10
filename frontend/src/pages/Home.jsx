@@ -20,6 +20,7 @@ const Home = () => {
   const [form, setForm] = useState([]);
   const [result, setResult] = useState(null);
   const [operator, setOperator] = useState(null);
+  //TODO: add dynamic validation
   const methods = useForm({});
   const {
     reset,
