@@ -12,8 +12,8 @@ services:
     ports:
       - 8000:8000
     depends_on:
-      - posgresql
-      - redis
+      - calc-app-postgres
+      - calc-app-redis
 
   calc-app-frontend:
     container_name: calc-app-frontend
