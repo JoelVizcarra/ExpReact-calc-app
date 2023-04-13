@@ -11,6 +11,7 @@ import AppError from '../utils/appError';
 import redisClient from '../utils/connectRedis';
 import { signJwt, verifyJwt } from '../utils/jwt';
 import { User } from '../entities/user.entity';
+import { createBalance } from '../services/balance.service';
 
 const cookiesOptions: CookieOptions = {
   httpOnly: true,
@@ -50,6 +51,14 @@ export const registerUserHandler = async (
     });
 
     await newUser.save();
+
+    // TODO: when adding users roles, we should not create a balance for admin users
+    const userBalance = await createBalance({
+      user: newUser,
+      credits: 0,
+    })
+
+    await userBalance.save()
 
     res.status(201).end();
   } catch (err: any) {

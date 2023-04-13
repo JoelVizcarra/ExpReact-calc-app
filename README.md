@@ -22,7 +22,7 @@ Simple Express TS - React Redux Saas calculator app
 ```
 
 4. Register an user in http://localhost:3000/signup
-5. The functionality to buy credits is not yet developed as it involves roles and authorization, so you will have to create a balance for your user and add credits manually, the structure of the table is very simple, you only need to fill the fields userId with the ID of your user and the credits field with the credits you want to have, 30 credits will be enough for testing.
+5. The functionality to buy credits is not yet developed as it involves roles and authorization, so you will have to create a balance for your user and add credits manually, the structure of the table is very simple, you only need to update the credits field with the number of credits you want, 30 credits will be enough for testing.
 
 You can connect to the database using the client of your preference or using the pgAdmin instance that comes with the project (http://localhost:9000)
 

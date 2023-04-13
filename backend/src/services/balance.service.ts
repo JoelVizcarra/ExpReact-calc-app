@@ -9,6 +9,10 @@ import AppError from '../utils/appError';
 
 const balanceRepository = AppDataSource.getRepository(Balance);
 
+export const createBalance = async (input: Partial<Balance>) => {
+  return await balanceRepository.save(balanceRepository.create(input));
+};
+
 export const getBalance = async (userId: string) => {
   return await balanceRepository.findOne({ where: { user: { id: userId } } });
 };
