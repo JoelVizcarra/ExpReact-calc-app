@@ -3,3 +3,4 @@ mongodb_data_container/
 .env
 postgres_data/
 redis_data/
+pgadmin_data/
