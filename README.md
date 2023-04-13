@@ -4,13 +4,13 @@ Simple Express TS - React Redux Saas calculator app
 
 ## Installation
 
+Copy and rename the .env.example files to .env (for /backend and /frontend)
+
 Build services
 
 ```bash
   docker-compose up -d --build
 ```
-
-Copy and rename the .env.example files to .env (for /backend and /frontend)
 
 Run migrations
 
