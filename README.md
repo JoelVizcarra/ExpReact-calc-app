@@ -40,7 +40,7 @@ pgAdmin credentials:
 
 database credentials:
 
-    - host (for pgAdmin and coker containers): calc-app-pgadmin
+    - host (for pgAdmin and coker containers): calc-app-postgres
     - host (for poutside docker): 127.0.0.1
     - port: 5432
     - username: user
