@@ -5,13 +5,6 @@ Simple Express TS - React Redux Saas calculator app
 - Client: Backend Docs URL http://localhost:3000
 - App API: Backend Docs URL http://localhost:8000/docs
 
-# University APP
-
-DB.json API with an RTK + MUI React App as client
-
-- Client: Backend Docs URL http://localhost:3000
-- App API: Backend Docs URL http://localhost:8000/docs
-
 ## Installation
 
 1. Copy and rename the .env.example files to .env (for /backend and /frontend)
