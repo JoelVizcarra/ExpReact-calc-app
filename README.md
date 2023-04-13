@@ -1,6 +1,6 @@
-# University APP
+# ExpReact-calc-app
 
-DB.json API with an RTK + MUI React App as client
+Simple Express TS - React Redux Saas calculator app
 
 - Client: Backend Docs URL http://localhost:3000
 - App API: Backend Docs URL http://localhost:8000/docs
