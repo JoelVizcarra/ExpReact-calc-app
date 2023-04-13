@@ -55,7 +55,7 @@ export const registerUserHandler = async (
     // TODO: when adding users roles, we should not create a balance for admin users
     const userBalance = await createBalance({
       user: newUser,
-      credits: 0,
+      credits: 30, // each user starts with 30 credits just for testing purposes
     })
 
     await userBalance.save()
