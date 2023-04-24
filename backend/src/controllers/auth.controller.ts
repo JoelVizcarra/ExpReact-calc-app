@@ -56,9 +56,9 @@ export const registerUserHandler = async (
     const userBalance = await createBalance({
       user: newUser,
       credits: 30, // each user starts with 30 credits just for testing purposes
-    })
+    });
 
-    await userBalance.save()
+    await userBalance.save();
 
     res.status(201).end();
   } catch (err: any) {
@@ -176,7 +176,7 @@ export const logoutHandler = async (
     await redisClient.del(user.id);
     logout(res);
 
-    res.status(200);
+    res.status(200).end();
   } catch (err: any) {
     next(err);
   }

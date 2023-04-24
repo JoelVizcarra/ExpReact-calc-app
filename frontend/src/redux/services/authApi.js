@@ -1,10 +1,16 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { login } from '../features/userSlice';
+import { login, logout } from '../features/userSlice';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({
     baseUrl: `${import.meta.env.VITE_AUTH_API}/auth`,
+    prepareHeaders: (headers, { getState, endpoint }) => {
+      const token = getState().userState.access_token;
+      if (token && endpoint === 'logoutUser')
+        headers.set('authorization', `Bearer ${token}`);
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
     signupUser: builder.mutation({
@@ -31,7 +37,23 @@ export const authApi = createApi({
         } catch (error) {}
       },
     }),
+    logoutUser: builder.mutation({
+      query() {
+        return {
+          url: '/logout',
+          method: 'GET',
+        };
+      },
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        await queryFulfilled;
+        dispatch(logout());
+      },
+    }),
   }),
 });
 
-export const { useLoginUserMutation, useSignupUserMutation } = authApi;
+export const {
+  useSignupUserMutation,
+  useLoginUserMutation,
+  useLogoutUserMutation,
+} = authApi;

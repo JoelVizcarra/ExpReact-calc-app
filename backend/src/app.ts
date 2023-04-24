@@ -4,6 +4,8 @@ import config from 'config';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
+
 import { AppDataSource } from './utils/data-source';
 import AppError from './utils/appError';
 import authRouter from './routes/auth.routes';
@@ -11,7 +13,6 @@ import userRouter from './routes/user.routes';
 import operationRouter from './routes/operation.routes';
 import recordRouter from './routes/record.routes';
 import validateEnv from './utils/validateEnv';
-import swaggerUi from 'swagger-ui-express';
 
 AppDataSource.initialize()
   .then(async () => {
